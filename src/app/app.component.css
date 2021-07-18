@@ -1,0 +1,192 @@
+
+*,
+*::before
+*::after {
+    box-sizing:border-box;
+}
+
+/* Custom Properties */
+:root{
+    --ff-primary: 'Source Sans Pro', sans-serif;;
+    --ff-secondary: 'Source Code Pro', monospace;;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #272727;
+    --clr-accent: #16e0bd;
+    --clr-ofwhite: #FFFFFF;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+        0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+@media (min-width: 800px){
+    :root{
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+
+/* General Styles */
+
+img{
+    display: block;
+    max-width: 100%;
+    margin-left: 0em;
+    padding-top: 0em;
+    
+}
+
+
+/* Typography */
+
+h1,
+h2,
+h3{
+line-height: 1;
+margin: 0;
+
+}
+
+h1{
+    font-size: var(--fs-h1);
+}
+
+h2{
+    font-size: var(--fs-h2);
+}
+
+h3{
+    font-size: var(--fs-h3);
+}
+
+:focus{
+    /*outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;*/
+    background: var(--clr-light);
+    border-color: var(--clr-accent);
+    border-width: 3.5px;
+    border-style: solid;
+   padding: 3px;
+    
+}
+
+
+
+/* Header */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: var(--clr-light);
+   
+}
+
+.logo{
+    max-width: 200px;
+    opacity: 100%;
+    padding-top: 4em;
+    
+}
+
+
+.nav__list::before{
+    
+    background: var(--clr-ofwhite);
+}
+
+.nav__list{
+    list-style: none;
+    padding-top: 3em;
+     display: flex;
+     align-items: center;
+     position: absolute;
+     z-index: 100;
+     top:0;
+     right:0;
+    left: 0;
+    width: 100%;
+   padding-left: 50px;
+   
+  
+    background: var(--clr-light);
+}
+
+
+.nav__link{
+    color: var(--clr-dark);
+    font-weight: var(--fw-reg);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+     display: inline-block;
+     justify-content: space-between;
+  align-self: start;
+  list-style-type: none;
+  
+  margin-right: 50px;
+  background: var(--clr-light);
+  
+  
+}
+
+
+.nav__link:hover{
+    color: var(--clr-accent);
+}
+
+
+.hamburger{
+    
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    background: var(--clr-accent);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    transition: transform 250ms ease-in-out;
+
+}
+
+
+.nav-toggle{
+    padding: .25em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position:absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+.hamburger::before{
+    top: 6px;
+}
+
+.hamburger::after{
+    bottom: 6px;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content:'';
+    position: absolute;
+    left: 0;
+    right: 0;
+
+}
+

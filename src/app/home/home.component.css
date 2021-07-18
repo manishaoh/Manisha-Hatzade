@@ -1,0 +1,158 @@
+*,
+*::before
+*::after {
+    box-sizing:border-box;
+}
+
+
+
+/* General Styles */
+
+img{
+    display: block;
+    max-width: 100%;
+    
+    
+}
+/* Typography */
+
+h1,
+h2,
+h3{
+line-height: 1;
+margin: 0;
+
+}
+
+h1{
+    font-size: var(--fs-h1);
+}
+
+h2{
+    font-size: var(--fs-h2);
+}
+
+h3{
+    font-size: var(--fs-h3);
+}
+
+section{
+    padding: 5em 2em;
+}
+
+strong{
+    font-weight: var(--fw-bold);
+}
+.section__title{
+    margin-bottom: 0.25em;
+    }
+    
+    .section__subtitle{
+        margin: 0;
+        font-size: var(--fs-h3);
+    }
+    
+    .section__subtitle--intro,
+    .section__subtitle--about{
+        background: var(--clr-accent);
+        font-family: var(--ff-secondary);
+        margin-bottom: 1em;
+        padding: .25em 1em;
+    
+    }
+
+    .section__title--intro{
+        font-weight: var(--fw-reg);
+
+    }
+    .section__title--intro strong{
+        display: block;
+    }
+
+/* Intro Section */
+.intro{
+position: relative;
+top: 1em;
+}
+
+
+.intro__img{
+box-shadow: var(--bs);
+}
+@media(min-width:600px){
+    .intro{
+        display: grid;
+        width:min-content;
+        margin: 0 auto;
+        column-gap: 1em;
+        grid-template-areas: 
+        "img title"
+        "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img{
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .section__subtitle--intro{
+        align-self: start;
+        grid-column: -1/1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+
+    }
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+.footer a {
+    color:inherit;
+    text-decoration: none;
+
+}
+
+.footer-link:hover,
+.social-list__link:hover {
+    opacity: .7;
+
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-link{
+   
+    font-weight: var(--fw-bold);
+}
+
+.social-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.social-list__item{
+    margin: 0 .5em;
+
+}
+.social-list__link{
+    padding: .5em;
+
+}
